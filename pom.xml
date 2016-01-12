@@ -10,8 +10,8 @@
         <artifactId>maven-compiler-plugin</artifactId>
         <version>3.1</version>
         <configuration>
-	          <source>1.6</source>
-	          <target>1.6</target>
+	          <source>1.8</source>
+	          <target>1.8</target>
         </configuration>
       </plugin>
  
@@ -27,9 +27,9 @@
 		    </execution>
 		  </executions>
 		</plugin> 
-
+<!--
  		<plugin>
-		  <groupId>org.apache.maven.plugins</groupId>
+ 		  <groupId>org.apache.maven.plugins</groupId>
 		  <artifactId>maven-source-plugin</artifactId>
 		  <executions>
 		    <execution>
@@ -40,7 +40,9 @@
 		    </execution>
 		  </executions>
 		</plugin> 
-  	</plugins>
+
+ -->
+   	</plugins>
   	
   </build>
   	<repositories>
@@ -63,6 +65,26 @@
 		    <artifactId>postgresql</artifactId>
 		    <version>9.1-901-1.jdbc4</version>
 		</dependency>
+
+		<dependency>
+			<groupId>org.apache.spark</groupId>
+			<artifactId>spark-core_2.10</artifactId>
+			<version>1.5.1</version>
+		</dependency>
+
+		<dependency>
+			<groupId>org.apache.spark</groupId>
+			<artifactId>spark-sql_2.10</artifactId>
+			<version>1.5.1</version>
+		</dependency>
+
+
+		<dependency>
+			<groupId>com.databricks</groupId>
+			<artifactId>spark-csv_2.10</artifactId>
+			<version>1.2.0</version>
+		</dependency>
+
 
 		<dependency>
 		    <groupId>com.github.bgithub1</groupId>

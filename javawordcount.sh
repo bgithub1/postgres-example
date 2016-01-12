@@ -1,0 +1,1 @@
+/Users/bperlman1/downloads/spark-1.5.2/bin/spark-submit --class com.billybyte.spark.JavaWordCount --master local target/postgres-helper-0.0.1-SNAPSHOT.jar /Users/bperlman1/Dropbox/prshare/billperlmanresumeAll3.txt
