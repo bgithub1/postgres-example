@@ -11,8 +11,6 @@ import org.apache.spark.api.java.function.PairFunction;
 import org.apache.spark.sql.DataFrame;
 import org.apache.spark.sql.SQLContext;
 
-import com.billybyte.commonstaticmethods.Dates;
-import com.billybyte.commonstaticmethods.Utils;
 
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -96,7 +94,8 @@ public final class JavaWordCount {
 //    dfClEq100.agg(m).show();
     ctx.stop();
     ctx.close();
-    long elapsed = Dates.getDifference(in, Calendar.getInstance(), TimeUnit.MILLISECONDS);
-    Utils.prt("elapsed = "+elapsed);
+    
+    long elapsed = Calendar.getInstance().getTimeInMillis() - in.getTimeInMillis();
+    System.out.println("elapsed = "+elapsed);
   }
 }

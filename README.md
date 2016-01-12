@@ -1,2 +1,2 @@
-postgres-helper has simple postgres examples
+postgres-example  has simple postgres and spark examples
 

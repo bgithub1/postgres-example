@@ -7,8 +7,8 @@ import java.sql.ResultSetMetaData;
 import java.sql.Statement;
 import java.util.Map;
 import java.util.TreeMap;
+import java.util.Map.Entry;
 
-import com.billybyte.commonstaticmethods.CollectionsStaticMethods;
 
 public class ReadSettleTabFromPostgres {
 
@@ -48,7 +48,11 @@ public class ReadSettleTabFromPostgres {
 				map.put(sn,s.substring(0,s.length()-1));
         	  } 
         	  rs.close();
-        	  CollectionsStaticMethods.prtMapItems(map);
+
+        	  for(Entry<String, String> entry : map.entrySet()){
+        		  System.out.println(entry.getValue());
+        	  }
+
 
 			} catch (Exception e) {
 				e.printStackTrace();

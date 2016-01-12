@@ -7,9 +7,9 @@ import java.sql.ResultSetMetaData;
 import java.sql.SQLException;
 import java.sql.Statement;
 import java.util.Map;
+import java.util.Map.Entry;
 import java.util.TreeMap;
 
-import com.billybyte.commonstaticmethods.CollectionsStaticMethods;
 
 public class ReadPortfolio {
 	public static void main(String[] args) {
@@ -18,9 +18,12 @@ public class ReadPortfolio {
         ResultSet rs = null;
 
     
-        String url = "jdbc:postgresql://test.cxpdwhygwwwh.us-east-1.rds.amazonaws.com/prod";
+        String url = "jdbc:postgresql://amazon_url";
+        url = url.replace("amazon_url", args[0]);
+        String username = args[1];
+        String pass = args[2];
         try {
-			con = DriverManager.getConnection(url,"billy","figtree77*");
+			con = DriverManager.getConnection(url,username,pass);
 	        st = con.createStatement();
 	        rs = st.executeQuery("SELECT VERSION()");
 
@@ -50,7 +53,9 @@ public class ReadPortfolio {
 				map.put(sn,s.substring(0,s.length()-1));
         	  } 
         	  rs.close();
-        	  CollectionsStaticMethods.prtMapItems(map);
+        	  for(Entry<String, String> entry : map.entrySet()){
+        		  System.out.println(entry.getValue());
+        	  }
 
 			} catch (Exception e) {
 				e.printStackTrace();
